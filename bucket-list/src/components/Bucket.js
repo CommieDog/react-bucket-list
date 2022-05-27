@@ -4,7 +4,7 @@ import BucketForm from './BucketForm';
 function Bucket(props) {
   const [edit, setEdit] = useState({
     id: null,
-    value: '',
+    text: '',
     eagerness: '',
   });
 
@@ -13,7 +13,7 @@ function Bucket(props) {
   const submitUpdate = (value) => {
 
     // TODO: Write logic to update the `edit` value in state after a user updates an entry in the list
-    setEdit({value});
+    setEdit({text: value});
     // TODO: Set the key:value pairs in the `edit` object back to empty strings
 
   };
@@ -32,11 +32,11 @@ function Bucket(props) {
       {/* TODO: Add an onClick event that invokes the `completeBucketItem` method passing the item id as a argument*/}
       <div key={index} onClick={() => props.completeBucketItem(item.id)}>
           {/* TODO: Add the item text here */}
-          {item.value}
+          {item.text}
       </div>
       <div className="icons">
         {/* TODO: Add an onClick event update the `edit` object with the `id`, `value`, and `eagerness` properties*/}
-        <p onClick={() => submitUpdate(item.value)}> ✏️</p>
+        <p onClick={() => submitUpdate(item.text)}> ✏️</p>
         {/* TODO: Add an onClick event that will invoke the removeBucketItem method passing in the `item.id` */}
         <p onClick={() => props.removeBucketItem(item.id)}> 🗑️</p>
       </div>
