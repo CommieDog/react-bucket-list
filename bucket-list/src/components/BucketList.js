@@ -20,7 +20,11 @@ function BucketList() {
     let updatedBucket = bucket.map((item) => {
       
       // TODO: Write logic that marks an item as complete or incomplete when invoked
-
+      if(id === item.id)
+      {
+        item.completed = true; // TODO Make sure this isn't provided
+      }
+      return item;
     });
 
     setBucket(updatedBucket);
