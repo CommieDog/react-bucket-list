@@ -22,7 +22,7 @@ function BucketList() {
       // TODO: Write logic that marks an item as complete or incomplete when invoked
       if(id === item.id)
       {
-        item.completed = true; // TODO Make sure this isn't provided
+        item.completed = true; // TODO Make sure this isn't provided somewehere else
       }
       return item;
     });
@@ -33,9 +33,12 @@ function BucketList() {
   // Function to remove bucket list item and update state
   const removeBucketItem = (id) => {
     // TODO: Write logic that will return an array of items that don't contain the ID passed to this function
-
+    const filteredBucket = bucket.filter((item) => {
+      return id !== item.id;
+    })
 
     // TODO: Update the bucket state variable
+    setBucket(filteredBucket);
   };
 
   // Function to edit the bucket list item
